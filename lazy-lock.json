@@ -9,10 +9,10 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "comment-box.nvim": { "branch": "main", "commit": "5214699659532adc47a74366abb8009f66465c2f" },
-  "diffview.nvim": { "branch": "main", "commit": "5bbcf162d03287296fe393f88da6065db3cf9fd0" },
+  "diffview.nvim": { "branch": "main", "commit": "7de7334ef61a3f3806b1616c2d785b8bbf080060" },
   "friendly-snippets": { "branch": "main", "commit": "046e4d3491baf664e0eef5231d28beb49333578b" },
   "gitsigns.nvim": { "branch": "main", "commit": "addd6e174a85fc1c4007ab0b65d77e6555b417bf" },
-  "glow.nvim": { "branch": "main", "commit": "c88184a0bbd3e32e0274ad8c3782aba718f1053c" },
+  "glow.nvim": { "branch": "main", "commit": "77b5cb1235c3a7d9be9d8cf6e0454d2528414911" },
   "guess-indent.nvim": { "branch": "main", "commit": "c37467baa1a51b74ed767cbe0540fce44e03d828" },
   "impatient.nvim": { "branch": "main", "commit": "c90e273f7b8c50a02f956c24ce4804a47f18162e" },
   "indent-blankline.nvim": { "branch": "master", "commit": "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7" },
@@ -61,5 +61,5 @@
   "vim-tsx-improve": { "branch": "master", "commit": "de537736ae5b457430d8f3d18a5937404bcb3c29" },
   "vimwiki": { "branch": "dev", "commit": "fea8bee382b2051b0137fd2cacf0862823ee69b3" },
   "which-key.nvim": { "branch": "main", "commit": "e4fa445065a2bb0bbc3cca85346b67817f28e83e" },
-  "zen-mode.nvim": { "branch": "main", "commit": "4313a5828e4d48c5f2f135f29d46f769a59dcfdc" }
+  "zen-mode.nvim": { "branch": "main", "commit": "92ca530511be6aaea596ff8083b09438eb695c24" }
 }
