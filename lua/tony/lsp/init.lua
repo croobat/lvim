@@ -1,10 +1,10 @@
-require("tony.lsp.languages.rust")
-require("tony.lsp.languages.go")
-require("tony.lsp.languages.python")
-require("tony.lsp.languages.js-ts")
-require("tony.lsp.languages.sh")
-require("tony.lsp.languages.emmet")
 require("tony.lsp.languages.css")
+require("tony.lsp.languages.emmet")
+require("tony.lsp.languages.go")
+require("tony.lsp.languages.js-ts")
+require("tony.lsp.languages.python")
+require("tony.lsp.languages.rust")
+require("tony.lsp.languages.sh")
 
 lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.diagnostics.update_in_insert = true
