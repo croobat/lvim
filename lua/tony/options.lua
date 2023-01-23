@@ -13,7 +13,7 @@ local options = {
 	writebackup = false, -- Backup while editing file
 
 	-- Tabs
-	expandtab = true, -- Turn tabs into spaces
+	expandtab = false, -- Turn tabs into spaces
 	smarttab = true, -- Detect number of spaces per tab
 	tabstop = 4, -- Number of spaces a tab counts for
 	softtabstop = 4, -- Number of spaces a tab counts for (editing)
