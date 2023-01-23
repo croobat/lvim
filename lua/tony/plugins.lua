@@ -29,6 +29,7 @@ lvim.plugins = {
 
     -- Debug
     { "folke/trouble.nvim", cmd = "TroubleToggle", },
+    { "mxsdev/nvim-dap-vscode-js", dependencies = { "mfussenegger/nvim-dap" } },
 
     -- Visuals
     { "norcalli/nvim-colorizer.lua",

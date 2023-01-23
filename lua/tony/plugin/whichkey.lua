@@ -102,6 +102,7 @@ local mappings = {
 
     -- a = auto-options
     -- c = comment box
+    -- d = debug
     ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
     ["f"] = { "<cmd>lua vim.lsp.buf.format { async = true }<CR>", "LSP format" },
     ["F"] = { "<cmd>%s/\\s\\+$//e<CR>", "Trailing spaces" },
@@ -179,6 +180,24 @@ local mappings = {
         t = { "<cmd>lua require('comment-box').accbox(7)<CR>", "Title" },
     },
 
+    d = {
+        name = "Debug",
+        b = { "<cmd>lua require'dap'.step_back()<CR>", "Step Back" },
+        c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
+        C = { "<cmd>lua require'dap'.run_to_cursor()<CR>", "Run To Cursor" },
+        d = { "<cmd>lua require'dap'.disconnect()<CR>", "Disconnect" },
+        g = { "<cmd>lua require'dap'.session()<CR>", "Get Session" },
+        i = { "<cmd>lua require'dap'.step_into()<CR>", "Step Into" },
+        o = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
+        p = { "<cmd>lua require'dap'.pause()<CR>", "Pause" },
+        q = { "<cmd>lua require'dap'.close()<CR>", "Quit" },
+        r = { "<cmd>lua require'dap'.repl.toggle()<CR>", "Toggle Repl" },
+        s = { "<cmd>lua require'dap'.continue()<CR>", "Start" },
+        t = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+        u = { "<cmd>lua require'dap'.step_out()<CR>", "Step Out" },
+        U = { "<cmd>lua require'dapui'.toggle({reset = true})<CR>", "Toggle UI" },
+    },
+
     g = {
         name = "Git",
         R = { "<cmd>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
@@ -199,12 +218,11 @@ local mappings = {
         name = "LSP",
         R = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
         S = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
-        a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-        c = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Action" },
+        c = { "<cmd>lua vim.lsp.codelens.run()<CR>", "CodeLens Run" },
         d = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "List definitions" },
         f = { "<cmd>lua vim.lsp.buf.format { async = true }<CR>", "Format" },
         i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "List implementations" },
-        l = { "<cmd>LspStart<CR>", "Start" },
+        l = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "CodeLens Action" },
         q = { "<cmd>lua vim.diagnostic.setloclist<CR>", "Quickfix" },
         r = { "<cmd>lua vim.lsp.buf.references()<CR>", "List references" },
         s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help" },

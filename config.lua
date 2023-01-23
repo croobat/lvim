@@ -85,6 +85,7 @@ lvim.builtin.nvimtree.setup.hijack_cursor = true
 lvim.builtin.nvimtree.setup.view.adaptive_size = true
 lvim.builtin.nvimtree.setup.view.adaptive_size = true
 lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
+lvim.builtin.nvimtree.setup.disable_netrw = true
 lvim.builtin.nvimtree.setup.renderer.icons.glyphs.git.unstaged = ""
 lvim.builtin.nvimtree.setup.renderer.icons.glyphs.git.staged = "S"
 lvim.builtin.nvimtree.setup.renderer.icons.glyphs.git.untracked = "U"
