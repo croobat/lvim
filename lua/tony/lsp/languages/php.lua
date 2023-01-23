@@ -19,7 +19,11 @@ lvim.format_on_save = {
 -- Linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-	{ command = "phpcs", args = { "--standard=/home/tony/.config/lvim/lua/tony/lsp/languages/phpcs.xml" }, filetypes = { "php" } },
+	{
+		command = "phpcs",
+		args = { "--standard=/home/tony/.config/lvim/lua/tony/lsp/languages/phpcs.xml" },
+		filetypes = { "php" },
+	},
 })
 
 -- LSP
@@ -36,10 +40,19 @@ dap.adapters.php = {
 }
 dap.configurations.php = {
 	{
-		name = "Listen for Xdebug",
+		name = "Xdebug",
 		type = "php",
 		request = "launch",
 		port = 9003,
+	},
+	{
+		name = "Xdebug (Docker)",
+		type = "php",
+		request = "launch",
+		port = 9003,
+		pathMappings = {
+			["/demo/"] = "${workspaceFolder}",
+		},
 	},
 	{
 		name = "Debug currently open script",
@@ -48,6 +61,6 @@ dap.configurations.php = {
 		port = 9003,
 		cwd = "${fileDirname}",
 		program = "${file}",
-		runtimeExecutable = "php",
+		runtimeExecutable = "php74",
 	},
 }
