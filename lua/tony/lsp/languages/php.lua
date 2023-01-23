@@ -3,8 +3,9 @@ lvim.builtin.treesitter.ensure_installed = {
 	"php",
 }
 
--- Plugins
-lvim.plugins = {}
+-- LSP
+ local lsp_manager = require("lvim.lsp.manager")
+lsp_manager.setup("intelephense")
 
 -- Formatters
 local formatters = require("lvim.lsp.null-ls.formatters")
@@ -25,10 +26,6 @@ linters.setup({
 		filetypes = { "php" },
 	},
 })
-
--- LSP
-local lsp_manager = require("lvim.lsp.manager")
-lsp_manager.setup("intelephense")
 
 -- DAP
 local dap = require("dap")

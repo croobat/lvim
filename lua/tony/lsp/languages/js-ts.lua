@@ -44,7 +44,7 @@ local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
 		command = "prettier",
-		extra_args = { "--tab-width", "4" },
+		extra_args = { "--tab-width", "4", "--print-width", "100" },
 		filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "css" },
 	},
 })
@@ -178,5 +178,6 @@ end
 -- Set a linter.
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-	{ command = "eslint", filetypes = { "javascript", "typescript" } },
+	{ command = "eslint_d", filetypes = { "javascript", "typescript" } },
+	-- { command = "eslint", filetypes = { "javascript", "typescript" } },
 })

@@ -1,3 +1,7 @@
+-- Treesitter
+lvim.builtin.treesitter.ensure_installed = { "lua", "rust", "toml", }
+
+-- LSP
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
@@ -68,7 +72,15 @@ pcall(function()
 	})
 end)
 
--- CHANGED --
+-- Formatters
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+	{ command = "rustfmt", filetypes = { "rust" } },
+})
+
+-- Linters
+
+-- DAP
 lvim.builtin.dap.on_config_done = function(dap)
 	dap.adapters.codelldb = codelldb_adapter
 	dap.configurations.rust = {

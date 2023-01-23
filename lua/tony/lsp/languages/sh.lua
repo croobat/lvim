@@ -1,7 +1,15 @@
+-- Formatter
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
 })
+
+-- Linter
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+	{ command = "shellcheck", args = { "--severity", "warning" }, filetypes =  "sh", "zsh", "bash" },
+})
+
 
 vim.filetype.add({
 	extension = {
