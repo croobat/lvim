@@ -222,6 +222,8 @@ local mappings = {
 		d = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "List definitions" },
 		f = { "<cmd>lua vim.lsp.buf.format { async = true }<CR>", "Format" },
 		i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "List implementations" },
+		j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
+		k = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
 		l = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "CodeLens Action" },
 		q = { "<cmd>lua vim.diagnostic.setloclist<CR>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.references()<CR>", "List references" },
