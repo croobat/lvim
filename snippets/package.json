@@ -1,22 +1,22 @@
 {
-  "name": "tony-snippets",
-  "engines": {
-    "vscode": "^1.11.0"
-  },
-  "contributes": {
-    "snippets": [
-      {
-        "language": [
-          "all"
-        ],
-        "path": "./global.json"
-      },
-      {
-        "language": [
-          "php"
-        ],
-        "path": "./php.json"
-      }
-    ]
-  }
+    "name": "tony-snippets",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "all"
+                ],
+                "path": "./global.json"
+            },
+            {
+                "language": [
+                    "php"
+                ],
+                "path": "./php.json"
+            }
+        ]
+    }
 }

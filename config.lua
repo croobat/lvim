@@ -1,35 +1,37 @@
-reload "impatient"
+reload("impatient")
 
 --  ┌──────┐
 --  │ Core │
 --  └──────┘
-reload "tony.plugins"
-reload "tony.options"
-reload "tony.keymaps"
-reload "tony.autocommands"
-reload "tony.lsp"
+reload("tony.plugins")
+reload("tony.options")
+reload("tony.keymaps")
+reload("tony.autocommands")
+reload("tony.lsp")
 
 --  ┌───────────────┐
 --  │ Extra plugins │
 --  └───────────────┘
-reload "tony.plugin.whichkey"
-reload "tony.plugin.commentbox"
-reload "tony.plugin.vimwiki"
+reload("tony.plugin.whichkey")
+reload("tony.plugin.commentbox")
+reload("tony.plugin.vimwiki")
 
 --  ┌───────┐
 --  │ Theme │
 --  └───────┘
 -- lvim.colorscheme = "tokyonight"
 require("tokyonight").setup({
-    style = "night",
-    on_colors = function(colors) colors.comment = "#626c9c" end,
+	style = "night",
+	on_colors = function(colors)
+		colors.comment = "#626c9c"
+	end,
 })
 
 --  ┌──────────────┐
 --  │ Lvim builtin │
 --  └──────────────┘
 lvim.log.level = "info"
-lvim.format_on_save = { enabled = false, pattern = "*.lua", timeout = 1000, }
+lvim.format_on_save = { enabled = false, pattern = "*.lua", timeout = 1000 }
 
 -- Alpha
 lvim.builtin.alpha.active = false
@@ -45,12 +47,18 @@ lvim.builtin.bufferline.options.diagnostics = ""
 
 -- Cmp
 local luasnip = require("luasnip")
-lvim.builtin.cmp.snippet.expand = function(args) luasnip.lsp_expand(args.body) end
+lvim.builtin.cmp.snippet.expand = function(args)
+	luasnip.lsp_expand(args.body)
+end
 lvim.builtin.cmp.mapping["<C-J>"] = function()
-    if luasnip.expand_or_jumpable() then luasnip.expand_or_jump() end
+	if luasnip.expand_or_jumpable() then
+		luasnip.expand_or_jump()
+	end
 end
 lvim.builtin.cmp.mapping["<C-K>"] = function()
-    if luasnip.jumpable(-1) then luasnip.jump(-1) end
+	if luasnip.jumpable(-1) then
+		luasnip.jump(-1)
+	end
 end
 
 -- Comment
@@ -110,4 +118,4 @@ lvim.builtin.telescope.defaults.selection_caret = "> "
 lvim.builtin.treesitter.ensure_installed = "all"
 lvim.builtin.treesitter.autotag.enable = true
 lvim.builtin.treesitter.rainbow.enable = true
-lvim.builtin.treesitter.rainbow.colors = { '#bb9af7', '#e0af68', '#2ac3de', '#9ece6a', '#f7768e' }
+lvim.builtin.treesitter.rainbow.colors = { "#bb9af7", "#e0af68", "#2ac3de", "#9ece6a", "#f7768e" }

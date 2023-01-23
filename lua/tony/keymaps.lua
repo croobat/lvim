@@ -83,12 +83,10 @@ keymap("i", "<M-f>", "<ESC><Space>Wi", opts)
 keymap("i", "<M-b>", "<ESC>Bi", opts)
 keymap("i", "<M-d>", "<ESC>ciw", opts)
 
-
 --## Visual ##
 -- Multiline segments
 keymap("v", "j", "gj", opts)
 keymap("v", "k", "gk", opts)
-
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -104,7 +102,6 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
 
 --## Terminal ##
 -- Better terminal navigation
