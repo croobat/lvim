@@ -32,28 +32,6 @@ vim.cmd([[
 	let g:UltiSnipsSnippetDirectories=[$HOME."/.config/nvim/UltiSnips"]
 ]])
 
--- CMP
-vim.api.nvim_create_autocmd("FileType", {
-	group = vim.api.nvim_create_augroup("LaTeXGroup", { clear = true }),
-	pattern = "tex",
-	callback = function()
-		local luasnip = require("luasnip")
-		lvim.builtin.cmp.snippet.expand = function(args)
-			luasnip.lsp_expand(args.body)
-		end
-		lvim.builtin.cmp.mapping["<C-J>"] = function()
-			if luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
-			end
-		end
-		lvim.builtin.cmp.mapping["<C-K>"] = function()
-			if luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			end
-		end
-	end,
-})
-
 -- Vimtex
 vim.g.vimtex_view_method = "zathura"
 vim.g.vimtex_quickfix_enabled = 0
