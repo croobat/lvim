@@ -144,6 +144,10 @@ lvim.plugins = { -- {{{
 			})
 		end,
 	},
+	{
+		"nvim-treesitter/playground",
+		event = "BufRead",
+	},
 	{ "NMAC427/guess-indent.nvim", config = "require('guess-indent').setup{}" },
 	{ "neoclide/vim-jsx-improve", ft = { "javascript", "javascriptreact" } },
 	{ "joshua7v/vim-tsx-improve", ft = { "typescript", "typescriptreact" } },
