@@ -5,30 +5,26 @@ local keymap = vim.api.nvim_set_keymap
 lvim.leader = "space"
 
 --## Disable mappings ##
---Remap space as leader key
--- keymap("", "<Space>", "<Nop>", opts)
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
-
--- keymap("n", "<leader>q", "<Nop>", opts)
--- keymap("", "q:", "<Nop>", opts)
---
-
---faster scrolling
+-- Better scrolling
 keymap("n", "<C-j>", "5gj", opts)
 keymap("n", "<C-k>", "5gk", opts)
 keymap("n", "<C-h>", "5h", opts)
 keymap("n", "<C-l>", "5l", opts)
 
-keymap("v", "<C-j>", "5gj", opts)
-keymap("v", "<C-k>", "5gk", opts)
-keymap("v", "<C-h>", "5h", opts)
-keymap("v", "<C-l>", "5l", opts)
+-- keymap("v", "<C-j>", "5gj", opts)
+-- keymap("v", "<C-k>", "5gk", opts)
+-- keymap("v", "<C-h>", "5h", opts)
+-- keymap("v", "<C-l>", "5l", opts)
 
 keymap("x", "<C-j>", "5gj", opts)
 keymap("x", "<C-k>", "5gk", opts)
 keymap("x", "<C-h>", "3h", opts)
 keymap("x", "<C-l>", "3l", opts)
+
+keymap("n", "j", "gj", opts)
+keymap("n", "k", "gk", opts)
+keymap("v", "j", "gj", opts)
+keymap("v", "k", "gk", opts)
 
 --Quickfix
 keymap("n", "<C-n>", ":cnext<CR>", opts)
@@ -84,10 +80,6 @@ keymap("i", "<M-b>", "<ESC>Bi", opts)
 keymap("i", "<M-d>", "<ESC>ciw", opts)
 
 --## Visual ##
--- Multiline segments
-keymap("v", "j", "gj", opts)
-keymap("v", "k", "gk", opts)
-
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
