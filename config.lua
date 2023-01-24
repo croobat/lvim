@@ -172,6 +172,20 @@ lvim.plugins = { -- {{{
 	{ "KeitaNakamura/tex-conceal.vim" },
 	{ "SirVer/ultisnips" },
 
+	-- Python
+	"AckslD/swenv.nvim",
+	"mfussenegger/nvim-dap-python",
+	{
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup {
+				enabled = true,
+				languages = { python = { template = { annotation_convention = "numpydoc", }, }, },
+			}
+		end,
+	},
+	{ "dccsillag/magma-nvim", build = ":UpdateRemotePlugins" },
+
 	-- Rust
 	"simrat39/rust-tools.nvim",
 	{ "saecki/crates.nvim", version = "v0.3.0", dependencies = { "nvim-lua/plenary.nvim" },

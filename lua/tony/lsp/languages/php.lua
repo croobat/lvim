@@ -4,7 +4,7 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 -- LSP
- local lsp_manager = require("lvim.lsp.manager")
+local lsp_manager = require("lvim.lsp.manager")
 lsp_manager.setup("intelephense")
 
 -- Formatters

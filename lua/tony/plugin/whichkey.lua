@@ -107,7 +107,7 @@ local mappings = {
 	["F"] = { "<cmd>%s/\\s\\+$//e<CR>", "Trailing spaces" },
 	-- g = git
 	-- l = lsp
-	["p"] = { "<cmd>Prettier<CR>", "Prettier format" },
+	-- p = python
 	["q"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
 	-- t = telescope
 	["w"] = { "<cmd>w!<CR>", "Save" },
@@ -245,6 +245,25 @@ local mappings = {
 			"<cmd>lua vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with( vim.lsp.diagnostic.on_publish_diagnostics, {underline = false})<CR>",
 			"disable underline",
 		},
+	},
+
+	p = {
+		name = "Python",
+		i = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Pick Env" },
+		v = { "<cmd>lua require('swenv.api').get_current_venv()<cr>", "Show Env" },
+		d = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" },
+		c = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" },
+		m = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" },
+		-- Jupyter
+		D = { "<Cmd>MagmaDelete<CR>", "Delete cell" },
+		E = { "<esc><cmd>MagmaEvaluateVisual<cr>", "Evaluate Highlighted Line" },
+		I = { "<Cmd>MagmaInit<CR>", "Init Magma" },
+		R = { "<Cmd>MagmaRestart!<CR>", "Restart Magma" },
+		S = { "<Cmd>MagmaSave<CR>", "Save" },
+		e = { "<Cmd>MagmaEvaluateLine<CR>", "Evaluate Line" },
+		k = { "<Cmd>MagmaDeinit<CR>", "Deinit Magma" },
+		r = { "<Cmd>MagmaReevaluateCell<CR>", "Re evaluate cell" },
+		s = { "<Cmd>MagmaShowOutput<CR>", "Show Output" },
 	},
 
 	r = {
