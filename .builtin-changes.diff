@@ -1,0 +1,109 @@
+diff --git a/lua/lvim/core/autopairs.lua b/lua/lvim/core/autopairs.lua
+index b9b6668..1cf2747 100644
+--- a/lua/lvim/core/autopairs.lua
++++ b/lua/lvim/core/autopairs.lua
+@@ -71,6 +71,39 @@ M.setup = function()
+     fast_wrap = lvim.builtin.autopairs.fast_wrap,
+   }
+ 
++  local Rule = require "nvim-autopairs.rule"
++  autopairs.add_rules {
++    -- Auto space
++    Rule(" ", " "):with_pair(function(opts)
++      local pair = opts.line:sub(opts.col - 1, opts.col)
++      return vim.tbl_contains({ "()", "[]", "{}" }, pair)
++    end),
++    Rule("( ", " )")
++      :with_pair(function()
++        return false
++      end)
++      :with_move(function(opts)
++        return opts.prev_char:match ".%)" ~= nil
++      end)
++      :use_key ")",
++    Rule("{ ", " }")
++      :with_pair(function()
++        return false
++      end)
++      :with_move(function(opts)
++        return opts.prev_char:match ".%}" ~= nil
++      end)
++      :use_key "}",
++    Rule("[ ", " ]")
++      :with_pair(function()
++        return false
++      end)
++      :with_move(function(opts)
++        return opts.prev_char:match ".%]" ~= nil
++      end)
++      :use_key "]",
++  }
++
+   if lvim.builtin.autopairs.on_config_done then
+     lvim.builtin.autopairs.on_config_done(autopairs)
+   end
+diff --git a/lua/lvim/core/cmp.lua b/lua/lvim/core/cmp.lua
+index 142d548..1cc5ecb 100644
+--- a/lua/lvim/core/cmp.lua
++++ b/lua/lvim/core/cmp.lua
+@@ -278,8 +278,8 @@ M.config = function()
+       { name = "tmux" },
+     },
+     mapping = cmp.mapping.preset.insert {
+-      ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+-      ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
++      -- ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
++      -- ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+       ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select }, { "i" }),
+       ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select }, { "i" }),
+       ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+@@ -295,11 +295,7 @@ M.config = function()
+         end,
+       },
+       ["<Tab>"] = cmp.mapping(function(fallback)
+-        if cmp.visible() then
+-          cmp.select_next_item()
+-        elseif luasnip.expand_or_locally_jumpable() then
+-          luasnip.expand_or_jump()
+-        elseif jumpable(1) then
++        if jumpable(1) then
+           luasnip.jump(1)
+         elseif has_words_before() then
+           -- cmp.complete()
+@@ -309,9 +305,7 @@ M.config = function()
+         end
+       end, { "i", "s" }),
+       ["<S-Tab>"] = cmp.mapping(function(fallback)
+-        if cmp.visible() then
+-          cmp.select_prev_item()
+-        elseif luasnip.jumpable(-1) then
++        if luasnip.jumpable(-1) then
+           luasnip.jump(-1)
+         else
+           fallback()
+diff --git a/lua/lvim/lsp/config.lua b/lua/lvim/lsp/config.lua
+index 6eecbf8..205c6c1 100644
+--- a/lua/lvim/lsp/config.lua
++++ b/lua/lvim/lsp/config.lua
+@@ -53,15 +53,15 @@ return {
+     signs = {
+       active = true,
+       values = {
+-        { name = "DiagnosticSignError", text = lvim.icons.diagnostics.Error },
+-        { name = "DiagnosticSignWarn", text = lvim.icons.diagnostics.Warning },
+-        { name = "DiagnosticSignHint", text = lvim.icons.diagnostics.Hint },
+-        { name = "DiagnosticSignInfo", text = lvim.icons.diagnostics.Information },
++        { name = "DiagnosticSignError", text = "x" },
++        { name = "DiagnosticSignWarn", text = "w" },
++        { name = "DiagnosticSignHint", text = "i" },
++        { name = "DiagnosticSignInfo", text = "?" },
+       },
+     },
+-    virtual_text = true,
++    virtual_text = false,
+     update_in_insert = false,
+-    underline = true,
++    underline = false,
+     severity_sort = true,
+     float = {
+       focusable = true,
