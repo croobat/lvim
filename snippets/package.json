@@ -1,20 +1,17 @@
 {
     "name": "tony-snippets",
+    "author": "Tony Ramirez",
     "engines": {
         "vscode": "^1.11.0"
     },
     "contributes": {
         "snippets": [
             {
-                "language": [
-                    "all"
-                ],
+                "language": "all",
                 "path": "./global.json"
             },
             {
-                "language": [
-                    "php"
-                ],
+                "language": "php",
                 "path": "./php.json"
             }
         ]
