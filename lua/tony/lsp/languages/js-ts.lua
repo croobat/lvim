@@ -1,11 +1,9 @@
--- Setup lsp.
+-- LSP
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" })
 
 local capabilities = require("lvim.lsp").common_capabilities()
 
 require("lvim.lsp.manager").setup("tsserver", {
-	-- require("typescript").setup {
-	-- disable_commands = false, -- prevent the plugin from creating Vim commands
 	debug = false, -- enable debug logging for commands
 	go_to_source_definition = {
 		fallback = true, -- fall back to standard LSP definition on failure
@@ -39,7 +37,7 @@ require("lvim.lsp.manager").setup("tsserver", {
 	},
 })
 
--- Set a formatter.
+-- Formatters
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
@@ -78,7 +76,7 @@ local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
 --     }
 -- end
 
--- setup adapters
+-- DAP
 require("dap-vscode-js").setup({
 	debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
 	debugger_cmd = { "js-debug-adapter" },
@@ -175,7 +173,7 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 	}
 end
 
--- Set a linter.
+-- Linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
 	{ command = "eslint_d", filetypes = { "javascript", "typescript" } },
