@@ -1,3 +1,4 @@
+require("tony.lsp.languages.c")
 require("tony.lsp.languages.css")
 require("tony.lsp.languages.emmet")
 require("tony.lsp.languages.go")
