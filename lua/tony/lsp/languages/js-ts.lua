@@ -41,7 +41,7 @@ require("lvim.lsp.manager").setup("tsserver", {
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
-		command = "prettier",
+		command = "prettierd",
 		extra_args = { "--tab-width", "4", "--print-width", "100" },
 		filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "css" },
 	},
