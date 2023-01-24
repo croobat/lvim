@@ -15,11 +15,11 @@ lvim.log.level = "info"
 lvim.format_on_save = { enabled = false, pattern = "*.lua", timeout = 1000 }
 
 -- Theme
--- lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight"
 require("tokyonight").setup({
 	style = "night",
 	on_colors = function(colors)
-		colors.comment = "#626c9c"
+		colors.comment = "#727eb5"
 	end,
 })
 
