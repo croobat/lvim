@@ -36,20 +36,26 @@ lvim.builtin.bufferline.options.show_close_icon = false
 lvim.builtin.bufferline.options.diagnostics = ""
 
 -- Cmp
+local cmp = require("cmp")
 local luasnip = require("luasnip")
-lvim.builtin.cmp.snippet.expand = function(args)
-	luasnip.lsp_expand(args.body)
-end
-lvim.builtin.cmp.mapping["<C-J>"] = function()
-	if luasnip.expand_or_jumpable() then
-		luasnip.expand_or_jump()
-	end
-end
-lvim.builtin.cmp.mapping["<C-K>"] = function()
-	if luasnip.jumpable(-1) then
-		luasnip.jump(-1)
-	end
-end
+
+cmp.setup({
+	mapping = cmp.mapping.preset.insert({
+		["<C-l>"] = cmp.mapping(cmp.mapping.confirm({ select = false }), { "i", "c" }),
+
+		["<C-j>"] = cmp.mapping(function()
+			if luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			end
+		end, { "i", "s" }),
+
+		["<C-k>"] = cmp.mapping(function()
+			if luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			end
+		end, { "i", "s" }),
+	}),
+})
 
 -- Comment
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", {})
