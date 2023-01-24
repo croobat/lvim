@@ -16,7 +16,12 @@ lvim.format_on_save = { enabled = false, pattern = "*.lua", timeout = 1000 }
 
 -- Theme
 -- lvim.colorscheme = "tokyonight"
-require("tokyonight").setup({ style = "night", on_colors = function(colors) colors.comment = "#626c9c" end, })
+require("tokyonight").setup({
+	style = "night",
+	on_colors = function(colors)
+		colors.comment = "#626c9c"
+	end,
+})
 
 -- Alpha
 lvim.builtin.alpha.active = false
@@ -178,27 +183,33 @@ lvim.plugins = { -- {{{
 	{
 		"danymat/neogen",
 		config = function()
-			require("neogen").setup {
+			require("neogen").setup({
 				enabled = true,
-				languages = { python = { template = { annotation_convention = "numpydoc", }, }, },
-			}
+				languages = { python = { template = { annotation_convention = "numpydoc" } } },
+			})
 		end,
 	},
 	{ "dccsillag/magma-nvim", build = ":UpdateRemotePlugins" },
 
 	-- Rust
 	"simrat39/rust-tools.nvim",
-	{ "saecki/crates.nvim", version = "v0.3.0", dependencies = { "nvim-lua/plenary.nvim" },
+	{
+		"saecki/crates.nvim",
+		version = "v0.3.0",
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("crates").setup({
-				null_ls = { enabled = true, name = "crates.nvim", },
-				popup = { border = "rounded", },
+				null_ls = { enabled = true, name = "crates.nvim" },
+				popup = { border = "rounded" },
 			})
-		end, },
-	{ "j-hui/fidget.nvim",
+		end,
+	},
+	{
+		"j-hui/fidget.nvim",
 		config = function()
 			require("fidget").setup()
-		end, },
+		end,
+	},
 
 	-- Visuals
 	{

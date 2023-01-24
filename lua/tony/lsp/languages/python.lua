@@ -1,5 +1,5 @@
 -- Treesitter
-lvim.builtin.treesitter.ensure_installed = { "python", }
+lvim.builtin.treesitter.ensure_installed = { "python" }
 
 -- LSP
 
@@ -46,4 +46,4 @@ vim.g.magma_cell_highlight_group = "CursorLine"
 -- The generated file is placed in this directory, with the filename itself
 -- being the buffer's name, with % replaced by %% and / replaced by %, and
 -- postfixed with the extension .json.
-vim.g.magma_save_path = vim.fn.stdpath "data" .. "/magma"
+vim.g.magma_save_path = vim.fn.stdpath("data") .. "/magma"

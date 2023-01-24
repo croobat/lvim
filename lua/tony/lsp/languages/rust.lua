@@ -1,5 +1,5 @@
 -- Treesitter
-lvim.builtin.treesitter.ensure_installed = { "lua", "rust", "toml", }
+lvim.builtin.treesitter.ensure_installed = { "lua", "rust", "toml" }
 
 -- LSP
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })

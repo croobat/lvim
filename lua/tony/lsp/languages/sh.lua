@@ -7,9 +7,10 @@ formatters.setup({
 -- Linter
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-	command = "shellcheck", extra_args = { "--severity", "warning" }, filetypes = { "sh", "zsh", "bash" },
+	command = "shellcheck",
+	extra_args = { "--severity", "warning" },
+	filetypes = { "sh", "zsh", "bash" },
 })
-
 
 vim.filetype.add({
 	extension = {
