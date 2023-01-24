@@ -115,39 +115,48 @@ local mappings = {
 	["x"] = { "I* [ ] <esc>", "Insert checkbox" },
 	["z"] = { "<cmd>:ZenMode<CR>", "Zen mode" },
 
-	--[[
-    L = {
-        name = "Latex",--{{{
-        I = {"", "Info full"},
-        X = {"", "Reload state"},
-        a = {"", "Context menu"},
-        i = {"", "Info"},
-        q = {"", "Log"},
-        s = {"", "Toggle main"},
-        x = {"", "Reload"},
-
-        C = {"", "Clean full"},
-        G = {"", "Status all"},
-        K = {"", "Stop all"},
-        L = {"", "Compile"},
-        c = {"", "Clean auxiliary files"},
-        e = {"", "Show errors"},
-        g = {"", "Status"},
-        k = {"", "Stop"},
-        l = {"", "Compile selected"},
-        o = {"", "Compile output"},
-
-        T = {"", "Toc toggle"},
-        m = {"", "Imaps list"},
-        r = {"", "Reverse search"},
-        t = {"", "TOC open"},
-        v = {"", "View"},
-
-        lc = {"<cmd>VimtexCountLetters", "Letter count"},
-        wc = {"<cmd>VimtexCountWords", "Word count"},
-    },--}}}
-    ]]
-	--
+	L = {
+		name = "LaTeX",
+		m = { "<cmd>VimtexContextMenu<CR>", "Open Context Menu" },
+		u = { "<cmd>VimtexCountLetters<CR>", "Count Letters" },
+		w = { "<cmd>VimtexCountWords<CR>", "Count Words" },
+		d = { "<cmd>VimtexDocPackage<CR>", "Open Doc for package" },
+		e = { "<cmd>VimtexErrors<CR>", "Look at the errors" },
+		s = { "<cmd>VimtexStatus<CR>", "Look at the status" },
+		a = { "<cmd>VimtexToggleMain<CR>", "Toggle Main" },
+		v = { "<cmd>VimtexView<CR>", "View pdf" },
+		i = { "<cmd>VimtexInfo<CR>", "Vimtex Info" },
+		l = {
+			name = "Clean",
+			l = { "<cmd>VimtexClean<CR>", "Clean Project" },
+			c = { "<cmd>VimtexClean<CR>", "Clean Cache" },
+		},
+		c = {
+			name = "Compile",
+			c = { "<cmd>VimtexCompile<CR>", "Compile Project" },
+			o = {
+				"<cmd>VimtexCompileOutput<CR>",
+				"Compile Project and Show Output",
+			},
+			s = { "<cmd>VimtexCompileSS<CR>", "Compile project super fast" },
+			e = { "<cmd>VimtexCompileSelected<CR>", "Compile Selected" },
+		},
+		r = {
+			name = "Reload",
+			r = { "<cmd>VimtexReload<CR>", "Reload" },
+			s = { "<cmd>VimtexReloadState<CR>", "Reload State" },
+		},
+		o = {
+			name = "Stop",
+			p = { "<cmd>VimtexStop<CR>", "Stop" },
+			a = { "<cmd>VimtexStopAll<CR>", "Stop All" },
+		},
+		t = {
+			name = "TOC",
+			o = { "<cmd>VimtexTocOpen<CR>", "Open TOC" },
+			t = { "<cmd>VimtexTocToggle<CR>", "Toggle TOC" },
+		},
+	},
 
 	a = {
 		name = "Auto-options",

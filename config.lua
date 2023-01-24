@@ -166,6 +166,12 @@ lvim.plugins = { -- {{{
 	-- C
 	{ "p00f/clangd_extensions.nvim" },
 
+	-- Latex
+	{ "lervag/vimtex" },
+	{ "kdheepak/cmp-latex-symbols" },
+	{ "KeitaNakamura/tex-conceal.vim" },
+	{ "SirVer/ultisnips" },
+
 	-- Rust
 	"simrat39/rust-tools.nvim",
 	{ "saecki/crates.nvim", version = "v0.3.0", dependencies = { "nvim-lua/plenary.nvim" },
