@@ -238,11 +238,10 @@ lvim.plugins = { -- {{{
 			require("todo-comments").setup()
 		end,
 	},
-	{ "LudoPinelli/comment-box.nvim", config = "require 'plugins.comment-box'" },
-	{ "vimwiki/vimwiki", config = "require 'plugins.vimwiki'", ft = { "vimwiki", "markdown" } },
+	{ "LudoPinelli/comment-box.nvim" },
+	{ "vimwiki/vimwiki", ft = { "vimwiki", "markdown" } },
 	{ "folke/zen-mode.nvim", cmd = { "ZenMode" } },
 	{ "lambdalisue/suda.vim", lazy = false },
 } -- }}}
 
 reload("tony.plugin.commentbox")
-reload("tony.plugin.vimwiki")
