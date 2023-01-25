@@ -108,6 +108,23 @@ lvim.autocommands = {
 		},
 	},
 
+	-- Disable foldmethod for diff files
+	{
+		"Filetype",
+		{
+			pattern = { "diff", "gitcommit" },
+			callback = function()
+				vim.opt_local.number = false
+				vim.opt_local.foldmethod = 'diff'
+				vim.opt.listchars = { tab = "  " }
+				vim.cmd("IndentBlanklineDisable")
+				vim.cmd("hi DiffAdd guifg=#449dab guibg=NONE")
+				vim.cmd("hi DiffDelete guifg=#914c54 guibg=NONE")
+				vim.cmd("hi DiffChange guifg=#6183bb guibg=NONE")
+			end,
+		},
+	},
+
 	-- Disable text-width
 	{
 		"Filetype",
