@@ -60,6 +60,22 @@ lvim.autocommands = {
 		},
 	},
 
+	-- Change tab size to 2
+	{
+		"Filetype",
+		{
+			pattern = {
+				"javascript",
+				"vue",
+				"json",
+			},
+			callback = function()
+				vim.opt_local.tabstop = 2
+				vim.opt_local.shiftwidth = 2
+			end,
+		},
+	},
+
 	-- Close help pages with q
 	{
 		"Filetype",
@@ -115,7 +131,7 @@ lvim.autocommands = {
 			pattern = { "diff", "gitcommit" },
 			callback = function()
 				vim.opt_local.number = false
-				vim.opt_local.foldmethod = 'diff'
+				vim.opt_local.foldmethod = "diff"
 				vim.opt.listchars = { tab = "  " }
 				vim.cmd("IndentBlanklineDisable")
 				vim.cmd("hi DiffAdd guifg=#449dab guibg=NONE")
