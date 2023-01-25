@@ -44,8 +44,8 @@ cmp.setup({
 		["<C-l>"] = cmp.mapping(cmp.mapping.confirm({ select = false }), { "i", "c" }),
 
 		["<C-j>"] = cmp.mapping(function()
-			if luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
+			if luasnip.jumpable(1) then
+				luasnip.jump(1)
 			end
 		end, { "i", "s" }),
 
