@@ -5,7 +5,15 @@ lvim.builtin.treesitter.ensure_installed = {
 
 -- LSP
 local lsp_manager = require("lvim.lsp.manager")
-lsp_manager.setup("intelephense")
+lsp_manager.setup("intelephense", {
+	settings = {
+		intelephense = {
+			diagnostics = {
+				undefinedProperties = false
+			}
+		}
+	}
+})
 
 -- Formatters
 local formatters = require("lvim.lsp.null-ls.formatters")
