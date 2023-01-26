@@ -6,3 +6,4 @@ vim.cmd("hi VimwikiHeader4 guifg=#50fa7b gui=bold")
 vim.cmd("hi VimwikiHeader5 guifg=#f1fa8c gui=italic")
 vim.cmd("hi VimwikiHeader6 guifg=#f1fa8c")
 vim.cmd("hi VimwikiLink    guifg=#8BE9FD gui=italic")
+vim.opt.textwidth = 100
