@@ -62,9 +62,6 @@ keymap("n", "<A-z>", ":set wrap!<CR>", opts)
 -- Better pasting
 keymap("n", "<A-p>", "pg;h", opts)
 
--- Open first quickfix
-keymap("n", "<C-P>", ":cfirst<CR>", opts)
-
 --## Insert ##
 -- Better insert navigation
 keymap("i", "<A-l>", "<ESC>la", opts)
