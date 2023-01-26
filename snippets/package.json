@@ -1,19 +1,19 @@
 {
-    "name": "tony-snippets",
-    "author": "Tony Ramirez",
-    "engines": {
-        "vscode": "^1.11.0"
-    },
-    "contributes": {
-        "snippets": [
-            {
-                "language": "all",
-                "path": "./global.json"
-            },
-            {
-                "language": "php",
-                "path": "./php.json"
-            }
-        ]
-    }
+  "name": "tony-snippets",
+  "author": "Tony Ramirez",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "all",
+        "path": "./global.json"
+      },
+      {
+        "language": "php",
+        "path": "./php.json"
+      }
+    ]
+  }
 }

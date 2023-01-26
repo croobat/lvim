@@ -1,0 +1,7 @@
+{
+  "datep": {
+    "prefix": "datep",
+    "body": ["(${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR_SHORT}) "],
+    "description": "Put the date in (Y-m-D) format"
+  }
+}

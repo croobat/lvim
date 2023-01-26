@@ -1,30 +1,30 @@
 {
-    "debug pre": {
-        "prefix": "pre",
-        "body": [
-            "print '<pre>';\nprint_r([$${0}]);\nprint '</pre>';"
-        ],
-        "description": "Print_r() con pre tag"
-    },
-    "concat variable": {
-        "prefix": "catvar",
-        "body": [
-            "' . $${1} . '${0}"
-        ],
-        "description": "Concatenate variable to string (single)"
-    },
-    "concat variable double": {
-        "prefix": "catvarr",
-        "body": [
-            "\" . $${1} . \"${0}"
-        ],
-        "description": "Concatenate variable to string (double)"
-    },
-    "fetch object": {
-        "prefix": "select_fetch",
-        "body": [
-            "\\$${1}sql = \"SELECT ${2:columna} FROM \" . MAIN_DB_PREFIX . \"${3:tabla} WHERE ${4:condicion}\";\n\n\\$re${1}sql = \\$db->query(\\$${1}sql);\n\nif(\\$re${1}sql) {\n\t\\$${5:obj} = \\$db->fetch_object(\\$${1}sql);\n}${0}"
-        ],
-        "description": "Generar variable $sql con select basico, fetch object"
-    }
+  "debug pre": {
+    "prefix": "pre",
+    "body": [
+      "print '<pre>';\nprint_r([$${0}]);\nprint '</pre>';"
+    ],
+    "description": "Print_r() con pre tag"
+  },
+  "concat variable": {
+    "prefix": "catvar",
+    "body": [
+      "' . $${1} . '${0}"
+    ],
+    "description": "Concatenate variable to string (single)"
+  },
+  "concat variable double": {
+    "prefix": "catvarr",
+    "body": [
+      "\" . $${1} . \"${0}"
+    ],
+    "description": "Concatenate variable to string (double)"
+  },
+  "fetch object": {
+    "prefix": "select_fetch",
+    "body": [
+      "\\$${1}sql = \"SELECT ${2:columna} FROM \" . MAIN_DB_PREFIX . \"${3:tabla} WHERE ${4:condicion}\";\n\n\\$re${1}sql = \\$db->query(\\$${1}sql);\n\nif(\\$re${1}sql) {\n\t\\$${5:obj} = \\$db->fetch_object(\\$${1}sql);\n}${0}"
+    ],
+    "description": "Generar variable $sql con select basico, fetch object"
+  }
 }
