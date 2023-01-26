@@ -1,7 +1,11 @@
 -- Formatter
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	{ command = "shfmt", filetypes = { "sh", "zsh", "bash" } },
+	{
+		command = "shfmt",
+		extra_args = { "--indent", "2" },
+		filetypes = { "sh", "zsh", "bash" },
+	},
 })
 
 -- Linter
