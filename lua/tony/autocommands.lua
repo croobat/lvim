@@ -68,10 +68,28 @@ lvim.autocommands = {
 				"javascript",
 				"vue",
 				"json",
+				"sh",
+				"zsh",
 			},
 			callback = function()
 				vim.opt_local.tabstop = 2
 				vim.opt_local.shiftwidth = 2
+			end,
+		},
+	},
+
+	-- Change tabs to spaces
+	{
+		"Filetype",
+		{
+			pattern = {
+				"javascript",
+				"vue",
+				"json",
+				"sh",
+			},
+			callback = function()
+				vim.opt_local.expandtab = true
 			end,
 		},
 	},
