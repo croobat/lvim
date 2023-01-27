@@ -124,14 +124,15 @@ reload("tony.plugin.whichkey")
 --  └──────────────────┘
 lvim.plugins = { -- {{{
 	{ "lewis6991/impatient.nvim" },
-	-- Syntax
+
+	-- Treesitter
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup()
 		end,
 	},
-	{ "JoosepAlviste/nvim-ts-context-commentstring", event = "BufRead" },
+	-- { "JoosepAlviste/nvim-ts-context-commentstring", event = "BufRead" },
 	{ "p00f/nvim-ts-rainbow" },
 	{
 		"romgrk/nvim-treesitter-context",
@@ -144,10 +145,9 @@ lvim.plugins = { -- {{{
 			})
 		end,
 	},
-	{
-		"nvim-treesitter/playground",
-		event = "BufRead",
-	},
+	{ "nvim-treesitter/playground", event = "BufRead" },
+
+	-- Syntax
 	{ "NMAC427/guess-indent.nvim", config = "require('guess-indent').setup{}" },
 	{ "neoclide/vim-jsx-improve", ft = { "javascript", "javascriptreact" } },
 	{ "joshua7v/vim-tsx-improve", ft = { "typescript", "typescriptreact" } },
