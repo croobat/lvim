@@ -1,7 +1,5 @@
 -- Treesitter
-lvim.builtin.treesitter.ensure_installed = {
-	"php",
-}
+lvim.builtin.treesitter.ensure_installed = { "php" }
 
 -- LSP
 local lsp_manager = require("lvim.lsp.manager")
@@ -9,10 +7,10 @@ lsp_manager.setup("intelephense", {
 	settings = {
 		intelephense = {
 			diagnostics = {
-				undefinedProperties = false
-			}
-		}
-	}
+				undefinedProperties = false,
+			},
+		},
+	},
 })
 
 -- Formatters

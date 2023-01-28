@@ -2,6 +2,18 @@
 lvim.builtin.treesitter.ensure_installed = { "python" }
 
 -- LSP
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+local capabilities = require("lvim.lsp").common_capabilities()
+
+require("lvim.lsp.manager").setup("pyright", {
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "off",
+			},
+		},
+	},
+})
 
 -- Formatters
 local formatters = require("lvim.lsp.null-ls.formatters")
