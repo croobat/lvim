@@ -29,6 +29,17 @@ lvim.autocommands = {
 		},
 	},
 
+	-- Remove numbers and caps from spell-checking
+	{
+		"BufEnter",
+		{
+			callback = function()
+				vim.cmd("syn match myExNonWords +\\<\\p*[^A-Za-z \\t]\\p*\\>+ contains=@NoSpell")
+				vim.cmd(":syn match myExCapitalWords +\\<[A-Z]\\w*\\>+ contains=@NoSpell")
+			end,
+		},
+	},
+
 	-- Disable auto-comment new line
 	{
 		"BufWinEnter",
