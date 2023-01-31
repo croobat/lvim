@@ -16,12 +16,13 @@ lsp_manager.setup("intelephense", {
 -- Formatters
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	{ command = "phpcsfixer", filetypes = { "php" } },
+	{
+		command = "phpcsfixer",
+		filetypes = { "php" },
+		-- TODD: fix disabling concat space
+		-- extra_args = { "--rules='{\"concat_space\":{\"spacing\":\"none\"}}'" },
+	},
 })
-
-lvim.format_on_save = {
-	pattern = { "*.php" },
-}
 
 -- Linters
 local linters = require("lvim.lsp.null-ls.linters")
